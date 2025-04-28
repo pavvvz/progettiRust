@@ -5,4 +5,4 @@ edition = "2024"
 
 [dependencies]
 rand = "0.8"
-winapi = { version = "0.3", features = ["winnt"] }
+winapi = { version = "0.3", features = ["winnt", "winioctl"] }
