@@ -36,7 +36,7 @@ fn main() -> io::Result<()> {
 
     let mut input = String::new();
     stdin().read_line(&mut input)?;
-    if input.trim().to_lowercase() != "sì" {
+    if input.trim().to_lowercase() != "si" {
         println!("Operazione annullata.");
         return Ok(());
     }
