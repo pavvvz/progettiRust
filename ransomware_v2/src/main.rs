@@ -54,7 +54,7 @@ fn encrypt_file(
     // legge il contenuto del file
     let data = fs::read(path)?;
 
-    // genera un nonce casuale di 12 byte (lunghezza standard per gcm)
+    // genera un nonce casuale di 12 byte (lunghezza standard per gcm) dio bastardo serve ma perche boh
     let mut nonce_bytes = [0u8; 12];
     thread_rng().fill_bytes(&mut nonce_bytes);
     let nonce = Nonce::from_slice(&nonce_bytes);
