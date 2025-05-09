@@ -1,0 +1,10 @@
+[package]
+name = "macaddrchanger"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+regex = "1.10"
+rand = "0.8"
+clap = { version = "4.5", features = ["derive"] }
+whoami = "1.5"
