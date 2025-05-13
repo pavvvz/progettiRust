@@ -9,7 +9,7 @@ use std::io::{Read, Write};
 use std::path::Path;
 use uuid::Uuid;
 use walkdir::WalkDir;
-
+//commento prova
 // Struttura per salvare la chiave AES e metadati
 #[derive(Serialize, Deserialize)]
 struct KeyData {
